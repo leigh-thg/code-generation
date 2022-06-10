@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "nvue-open-api-specification-for-cumulus-linux-5-1-0-client"
+version = "5.1.0"
+description = "A client library for accessing NVUE OpenAPI Specification for Cumulus Linux 5.1.0"
+
+authors = []
+
+readme = "README.md"
+packages = [
+    {include = "nvue_open_api_specification_for_cumulus_linux_5_1_0_client"},
+]
+include = ["CHANGELOG.md", "nvue_open_api_specification_for_cumulus_linux_5_1_0_client/py.typed"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+httpx = ">=0.15.4,<0.24.0"
+attrs = ">=21.3.0"
+python-dateutil = "^2.8.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target_version = ['py37', 'py38', 'py39']
+exclude = '''
+(
+  /(
+    | \.git
+    | \.venv
+    | \.mypy_cache
+  )/
+)
+'''
+
+[tool.isort]
+line_length = 120
+profile = "black"
